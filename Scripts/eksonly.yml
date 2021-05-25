@@ -1,0 +1,28 @@
+apiVersion: v1
+preferences: {}
+kind: Config
+
+clusters:
+  - cluster:
+      server: https://B1577D8D0A3356B642B931DE2736D681.gr7.ap-southeast-1.eks.amazonaws.com
+      certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJeE1EVXlNekUxTVRFd05sb1hEVE14TURVeU1URTFNVEV3Tmxvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTWRHClpSNWFHdW16eUxQUkUzRTQrTzNYS09kS2J0QXdWeGRXZzFHdkp3RlpkcnNQQUFManZzeEhnUUY5eFFLK1dYNEUKdm90UXhqYkM3VjFLZ09FaXhEdGp3K0luZGFXaFJZMVRpVm9LMG9pTzBkdnJsaCtlTDd1eVhGamRUd0NHZUVTRApsOGhLc2l2TDRNQm5rQlhScms4RDBJMHRnK2ZOVDI0OW81VEpYNXlOdkprbkhXMWxLVXhobTlib2hzRmRKUGhECkowNG42YXIxNWZwTW9xenBGR0h3cGFkazZOVm1QaTZUMm50cjhZWTFyMkFhUGRHc21sYVMvVytVZ0RaZElPZFkKYlJiZHVMek9ieitrcnNFMmFVS05OY0h0Um13T1R1QUtBK2pqVmd1WlNFWmpHd2YyK0RFQll0TFR0NTdaUFNpRgo4NlpObXppZkZ2Y3dtdkdnN2EwQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFGQWpNN2s0alBMN3VMaVQxM0MyZGRSYmJ6elcKOXNsbStFY0pTbk8yWnFXMlFKZllLdmVZYkN4K3pMYnVuWUk1c2FFeGZrUW1Mclc2WkdBQWZNbW5tUFZrVzdnUgppcldKUDN0WHdKaUF6TktMTVZMVHlBTnZqMGx0UTRLQ0hFUTVlQ2lWaitYcFNNdnlqMUU3UlNPTmUzdFdyenloCmF6U1BvaWFEbUFwS3F3L2hNRlN2TmRxTlg1UGo1c2Q2T1NQWlA3bk44T3BpZmRxVHlGM2VEYmZnc2hvbzJmV0QKWisvR2V1enBLVTBtejdhdHEvZW05UkZjcEQydUljbkNxNmVlbTNQaS9CUXBlbkZHakYvNnBPbVpoWW5tYnZkawpmYjZqRG5RbFdjRldEeEk3bzRaSW1lRUFCSlI5dmJJejdlQnE4bGhHMmwxMzhhRzdKYkVDVGJtN0x1VT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    name: eks_aws-usg-my-eks
+
+contexts:
+  - context:
+      cluster: eks_aws-usg-my-eks
+      user: eks_aws-usg-my-eks
+    name: eks_aws-usg-my-eks
+
+current-context: eks_aws-usg-my-eks
+
+users:
+  - name: eks_aws-usg-my-eks
+    user:
+      exec:
+        apiVersion: client.authentication.k8s.io/v1alpha1
+        command: aws-iam-authenticator
+        args:
+          - "token"
+          - "-i"
+          - "aws-usg-my-eks"

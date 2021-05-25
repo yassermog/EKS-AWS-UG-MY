@@ -1,0 +1,1 @@
+kubectl get all,cm,secret,ing -A
