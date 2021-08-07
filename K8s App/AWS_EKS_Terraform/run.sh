@@ -8,3 +8,5 @@ kubectl apply -n exampe-app -f deployments/deployment.yaml
 kubectl apply -n exampe-app -f services/service.yaml 
 
 kubectl get svc -n exampe-app
+
+kubectl delete ns exampe-app
