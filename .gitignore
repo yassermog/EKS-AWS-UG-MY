@@ -1,0 +1,5 @@
+
+AWS_Secrets_Terraform/Terraform/terraform.exe
+*.exe
+AWS_Secrets_Terraform/Terraform/.terraform
+AWS_Secrets_Terraform/php_app/vendor/
