@@ -1,0 +1,16 @@
+{
+  "name": "YasserMOghrabiah-AWS-USG-MY",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node -e \"(async () => console.log(await require('./index').handler({})))();\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "*",
+    "mysql": "^2.18.1"
+  }
+}
