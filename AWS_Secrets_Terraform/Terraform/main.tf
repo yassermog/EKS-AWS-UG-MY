@@ -87,7 +87,8 @@ resource aws_security_group allow_lambda {
     from_port       = 0
     to_port         = 0
     protocol        = "-1"
-    security_groups = [var.lambda_subnsecurity_group_id]
+    #security_groups = [var.lambda_subnsecurity_group_id]
+    cidr_blocks = ["0.0.0.0/0"]
   }
 }
 

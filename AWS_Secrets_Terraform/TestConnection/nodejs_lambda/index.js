@@ -3,7 +3,9 @@ const AWS = require('aws-sdk')
 var mysql = require('mysql');
 
 const client = new AWS.SecretsManager({ region: 'ap-southeast-1' })
-SecretId = "DatabaseParameters"
+
+SecretId = "testsecret"
+
 const getSecrets = async (SecretId) => {
   return await new Promise((resolve, reject) => {
     client.getSecretValue({ SecretId }, (err, result) => {
@@ -19,6 +21,7 @@ const main = async (event) => {
   jsoncreds = await getSecrets(SecretId)
   //console.log("result is :" + jsoncreds)
   creds = JSON.parse(jsoncreds);
+  console.log(creds);
 
   var con = mysql.createConnection({
     host: creds.host.replace(':3306', ''),

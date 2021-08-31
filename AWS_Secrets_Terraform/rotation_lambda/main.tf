@@ -56,7 +56,7 @@ resource "aws_lambda_function" "lambda_rotation" {
   s3_bucket = aws_s3_bucket.lambda_bucket.id
   s3_key    = aws_s3_bucket_object.lambda_rotation_bucket.key
 
-  runtime = "python3.9"
+  runtime = "python3.7"
   handler = "index.lambda_handler"
 
   source_code_hash = data.archive_file.lambda_rotation_zip.output_base64sha256

@@ -6,3 +6,6 @@ AWS_Secrets_Terraform/TestConnection/phpApp/vendor/
 AWS_Secrets_Terraform/TestConnection/nodejs_lambda/node_modules/
 AWS_Secrets_Terraform/rotation_lambda/functions/
 !AWS_Secrets_Terraform/rotation_lambda/functions/index.py
+AWS_Secrets_Terraform/rotation_lambda/functions.zip
+AWS_Secrets_Terraform/rotation_lambda/functions.zip
+*.php

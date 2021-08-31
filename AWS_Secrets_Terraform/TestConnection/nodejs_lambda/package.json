@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "node -e \"(async () => console.log(await require('./index').handler({})))();\""
+    "test": "node -e \"(async () => await require('./index').handler({}))();\""
   },
   "keywords": [],
   "author": "",
